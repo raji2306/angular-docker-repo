@@ -12,7 +12,7 @@ FROM nginx:alpine as production-stage
 RUN rm /etc/nginx/conf.d/default.conf
 COPY --from=build-stage /app/dist/angular-media-app /usr/share/nginx/html
 # Copy custom Nginx configuration file
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 # Expose port 80
 EXPOSE 80
 # Start Nginx
